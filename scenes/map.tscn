@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://osnts0xrmx64"]
+
+[ext_resource type="Script" path="res://scripts/map.gd" id="1_cjdej"]
+[ext_resource type="Script" path="res://scripts/map_generator.gd" id="1_hdm3u"]
+
+[sub_resource type="Gradient" id="Gradient_5i1uq"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yw7f6"]
+gradient = SubResource("Gradient_5i1uq")
+width = 50
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_cjdej")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Lines" type="Node2D" parent="Visuals"]
+unique_name_in_owner = true
+
+[node name="Rooms" type="Node2D" parent="Visuals"]
+unique_name_in_owner = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(576, 324)
+
+[node name="MapGenerator" type="Node" parent="."]
+script = ExtResource("1_hdm3u")
+
+[node name="MapBG" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="BG" type="TextureRect" parent="MapBG"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_yw7f6")

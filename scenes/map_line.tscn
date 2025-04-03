@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwyh77lns8e7k"]
+
+[ext_resource type="Texture2D" uid="uid://gdqbi1fsk4hp" path="res://New Piskel.png" id="1_okmut"]
+
+[node name="MapLine" type="Line2D"]
+texture_repeat = 2
+width = 8.0
+texture = ExtResource("1_okmut")
+texture_mode = 1

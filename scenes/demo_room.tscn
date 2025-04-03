@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://q6p22bljsrrt"]
+
+[ext_resource type="Script" path="res://scripts/demo_room.gd" id="1_s3jvt"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_73w0t"]
+
+[node name="DemoRoom" type="Node2D"]
+script = ExtResource("1_s3jvt")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(0.301961, 1, 1, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_73w0t")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Click To Finish The Room"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
